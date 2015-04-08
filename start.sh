@@ -6,7 +6,8 @@ POSTGRES="/usr/lib/postgresql/9.4/bin/postgres"
 INITDB="/usr/lib/postgresql/9.4/bin/initdb"
 
 ls -alh /etc/ssl/private/ssl-cert-snakeoil.key 
-chown postgres:postgres /etc/ssl/private/ssl-cert-snakeoil.key 
+chown postgres /etc/ssl/private/ssl-cert-snakeoil.key 
+ls -alh /etc/ssl/private/ssl-cert-snakeoil.key
 
 if [ ! -d $DATADIR ]; then
   echo "Creating Postgres data at $DATADIR"
