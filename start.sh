@@ -9,6 +9,8 @@ ls -alh /etc/ssl/private/ssl-cert-snakeoil.key
 chown postgres /etc/ssl/private/ssl-cert-snakeoil.key 
 ls -alh /etc/ssl/private/ssl-cert-snakeoil.key
 chmod og-rwx /etc/ssl/private/ssl-cert-snakeoil.key
+ls -alh /etc/ssl/private/
+
 
 if [ ! -d $DATADIR ]; then
   echo "Creating Postgres data at $DATADIR"
