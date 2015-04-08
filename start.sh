@@ -5,11 +5,15 @@ CONF="/etc/postgresql/9.4/main/postgresql.conf"
 POSTGRES="/usr/lib/postgresql/9.4/bin/postgres"
 INITDB="/usr/lib/postgresql/9.4/bin/initdb"
 
+adduser postgres ssl-cert
+
 ls -alh /etc/ssl/private/ssl-cert-snakeoil.key 
 chown postgres /etc/ssl/private/ssl-cert-snakeoil.key 
 ls -alh /etc/ssl/private/ssl-cert-snakeoil.key
 chmod og-rwx /etc/ssl/private/ssl-cert-snakeoil.key
 ls -alh /etc/ssl/private/
+
+
 
 
 if [ ! -d $DATADIR ]; then
