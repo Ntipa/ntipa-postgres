@@ -5,6 +5,8 @@ CONF="/etc/postgresql/9.4/main/postgresql.conf"
 POSTGRES="/usr/lib/postgresql/9.4/bin/postgres"
 INITDB="/usr/lib/postgresql/9.4/bin/initdb"
 
+ls -alh /etc/ssl/private/ssl-cert-snakeoil.key 
+
 if [ ! -d $DATADIR ]; then
   echo "Creating Postgres data at $DATADIR"
   mkdir -p $DATADIR
@@ -15,8 +17,8 @@ if [ ! "$(ls -A $DATADIR)" ]; then
   chown -R postgres $DATADIR
   su postgres sh -c "$INITDB $DATADIR"
   su postgres sh -c "$POSTGRES --single -D $DATADIR -c config_file=$CONF" <<< "CREATE USER ntipa WITH SUPERUSER PASSWORD 'ntipa';"
- 
 fi
+
 service postgresql start
 echo "Creating Postgres DB for NTIPA"
 su - postgres  -c  "createdb -O ntipa ntipa-manager" 
