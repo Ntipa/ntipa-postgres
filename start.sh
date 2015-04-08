@@ -8,10 +8,10 @@ INITDB="/usr/lib/postgresql/9.4/bin/initdb"
 adduser postgres ssl-cert
 
 ls -alh /etc/ssl/private/ssl-cert-snakeoil.key 
-chown postgres /etc/ssl/private/ssl-cert-snakeoil.key 
+chown -R postgres /etc/ssl/private
 ls -alh /etc/ssl/private/ssl-cert-snakeoil.key
-chmod og-rwx /etc/ssl/private/ssl-cert-snakeoil.key
-ls -alh /etc/ssl/private/
+
+ls -Ralh /etc/ssl/
 
 
 

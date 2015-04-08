@@ -2,7 +2,6 @@ FROM ubuntu:trusty
 MAINTAINER Tindaro Tornabene <tindaro.tornabene@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
- 
 RUN apt-get -y update
 RUN apt-get -y install wget
 RUN echo "deb http://archive.ubuntu.com/ubuntu trusty main universe" > /etc/apt/sources.list
